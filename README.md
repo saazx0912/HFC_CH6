@@ -12,3 +12,7 @@
 2. struct本身不可以再包含完整遞迴的struct ，因為struct無法確切知道要占用多少記憶空間。
 
 3. strdup() 複製字串 ,它是用malloc()來建立儲存空間，儲存空間位於heap ，必須手動釋放free()
+
+4.gcc -g p289.c -o p289   -g加入偵錯資訊
+
+5.valgrind --leak-check=full ./p289  valgrind記憶體洩漏偵錯工具

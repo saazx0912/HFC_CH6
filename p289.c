@@ -71,13 +71,22 @@ int main(){
                 current->yes = yes_node;
 
                 /* Make the no-node a copy of this question*/
+                node *no_node = create(current->question);
+                current->no = no_node;
 
+                /*Then replace this question with the new question*/
+                printf("Give me a question that is TRUE for %s but not for %s? " , suspect , current->question);
+                fgets(question , 80 ,stdin);
+                free(current->question);
+                current->question = strdup(question);
 
-
+                break;
             }
         }
         
-    } while (condition);
+    } while (yes_no("Run again"));
+
+    release(start_node);
     
 
 
